@@ -12,7 +12,7 @@ If `$sanitizer->text()` interferes with special characters in your filenames you
 
 Prior to version 7.1 (with internal_encoding set to UTF-8), PHP has problems working with files containing special characters on Windows. Read more [here](http://blog.garr.co.uk/php/2015/09/22/php-windows-and-utf-8-filenames.html).
 
-If you are running PW on Windows and want to use this module with filenames containing special characters you'll have some extra work to do.
+If you are running PW on Windows with PHP < 7.1 and want to use this module with filenames containing special characters you'll have some extra work to do.
 
 1. Download and install [php-wfio](https://github.com/kenjiuno/php-wfio).
 2. Copy the saveUpload() method code from /wire/core/WireUpload.php to WireUploadRenamed.php.
