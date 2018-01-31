@@ -1,0 +1,32 @@
+<?php namespace ProcessWire;
+
+class InputfieldFileUnrenamed extends InputfieldFile {
+
+	public static function getModuleInfo() {
+		return array(
+			'title' => __('Files Unrenamed', __FILE__),
+			'summary' => __('One or more unrenamed file uploads (sortable).', __FILE__),
+			'version' => '0.1.0',
+			'requires' => 'FieldtypeFileUnrenamed'
+		);
+	}
+
+	public function __construct() {
+		parent::__construct();
+		require_once dirname(__FILE__) . '/WireUploadUnrenamed.php';
+		require_once dirname(__FILE__) . '/PagefilesUnrenamed.php';
+	}
+
+	public function getWireUpload() {
+		if(is_null($this->wireUpload)) $this->wireUpload = $this->wire(new WireUploadUnrenamed($this->attr('name')));
+		return $this->wireUpload;
+	}
+
+	public function renderReady(Inputfield $parent = null, $renderValueMode = false) {
+		parent::renderReady($parent, $renderValueMode);
+		$modules = $this->wire('modules');
+		$result = $modules->loadModuleFileAssets($modules->get('InputfieldFile')) > 0;
+		return $result;
+	}
+
+}
