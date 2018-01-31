@@ -7,7 +7,9 @@ class FieldtypeFileUnrenamed extends FieldtypeFile {
 			'title' => __('Files Unrenamed', __FILE__),
 			'version' => '0.1.0',
 			'summary' => __('Field that stores one or more unrenamed files.', __FILE__),
-			'installs' => 'InputfieldFileUnrenamed'
+			'author' => 'Robin Sallis',
+			'href' => 'https://github.com/Toutouwai/FieldtypeFileUnrenamed',
+			'installs' => 'InputfieldFileUnrenamed',
 		);
 	}
 

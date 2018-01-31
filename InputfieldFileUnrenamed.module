@@ -7,7 +7,9 @@ class InputfieldFileUnrenamed extends InputfieldFile {
 			'title' => __('Files Unrenamed', __FILE__),
 			'summary' => __('One or more unrenamed file uploads (sortable).', __FILE__),
 			'version' => '0.1.0',
-			'requires' => 'FieldtypeFileUnrenamed'
+			'author' => 'Robin Sallis',
+			'href' => 'https://github.com/Toutouwai/FieldtypeFileUnrenamed',
+			'requires' => 'FieldtypeFileUnrenamed',
 		);
 	}
 
