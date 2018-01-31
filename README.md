@@ -8,7 +8,7 @@ This module bypasses the santization of filenames that is normally done by the P
 
 If `$sanitizer->text()` interferes with special characters in your filenames you will have to add your own custom sanitization to the module.
 
-## Windows
+## Windows with PHP < 7.1
 
 Prior to version 7.1 (with internal_encoding set to UTF-8), PHP has problems working with files containing special characters on Windows. Read more [here](http://blog.garr.co.uk/php/2015/09/22/php-windows-and-utf-8-filenames.html).
 
